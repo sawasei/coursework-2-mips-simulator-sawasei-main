@@ -179,4 +179,3 @@ void run(uint32_t pc)
         printf("$%d : 0x%08X\n", i, registers[i]);
     }
 }
-
