@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/sawasei/Downloads/coursework-2-mips-simulator-sawasei-main/src",
+      "program": "/Users/sawasei/Downloads/coursework-2-mips-simulator-sawasei-main/src/build/Debug/outDebug"
+    }
+  ]
+}

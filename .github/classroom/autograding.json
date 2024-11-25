@@ -1,0 +1,84 @@
+{
+  "tests": [
+    {
+      "name": "ackermann",
+      "setup": "make clean && make && bash ./assemble.sh examples/ackermann/ackermann.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "3\n3\n",
+      "output":"\nEnter m value to calculate A(m,n): \nEnter n value to calculate A(m,n): \nAckermann's function with M and N = 61\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 0000003D\n$5  : 0000003C\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 0000003D\n$17 : 00000003\n$18 : 00000003\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 004001E8\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name" : "basic arithmetic",
+      "setup": "make clean && make && bash ./assemble.sh examples/basic_arithmetic/basic.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "",
+      "output":"\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 00000000\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000019\n$11 : 0000000C\n$12 : 00000025\n$13 : 0000000D\n$14 : 00000000\n$15 : 00000000\n$16 : 00000000\n$17 : 00000000\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 00400018\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "function with stack",
+      "setup": "make clean && make && bash ./assemble.sh examples/function_with_stack/function_with_stack.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "",
+      "output":"y=20\n\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 1001000B\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000005\n$17 : 00000014\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 004001B8\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "function without stack",
+      "setup": "make clean && make && bash ./assemble.sh examples/function_without_stack/function_without_stack.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "",
+      "output":"y=20\n\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 1001000B\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000003\n$17 : 00000014\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 004001B8\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "hello world",
+      "setup": "make clean && make && bash ./assemble.sh examples/hello_world/hello.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "",
+      "output": "Hello World\n\nRegisters:\n$0  : 00000000\n$1  : 10000000\n$2  : 0000000A\n$3  : 00000000\n$4  : 10010000\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000000\n$17 : 00000000\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 00400018\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "io",
+      "setup": "make clean && make && bash ./assemble.sh examples/io/io.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "3\n4\n",
+      "output":"Enter A:   Enter B:   A + B = 7\n\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 10010021\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000007\n$9  : 00000004\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000000\n$17 : 00000000\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 00400018\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "loop",
+      "setup": "make clean && make && bash ./assemble.sh examples/loop/loop.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "3\n",
+      "output":"Number of integers (N)?  Sum = 6\n\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 10010021\n$5  : 7FFFF000\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000003\n$9  : 00000003\n$10 : 00000006\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000000\n$17 : 00000000\n$18 : 00000000\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 00400018\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "loop_with_function",
+      "setup": "make clean && make && bash ./assemble.sh examples/loop_with_function/loop_with_function.s",
+      "run": "./build/sim hexcode.txt",
+      "input": "4\n",
+      "output":"Number of integers (N)?  Sum = 10\n\nRegisters:\n$0  : 00000000\n$1  : 10010000\n$2  : 0000000A\n$3  : 00000000\n$4  : 10010021\n$5  : 00000004\n$6  : 7FFFF004\n$7  : 00000000\n$8  : 00000000\n$9  : 00000000\n$10 : 00000000\n$11 : 00000000\n$12 : 00000000\n$13 : 00000000\n$14 : 00000000\n$15 : 00000000\n$16 : 00000004\n$17 : 00000004\n$18 : 0000000A\n$19 : 00000000\n$20 : 00000000\n$21 : 00000000\n$22 : 00000000\n$23 : 00000000\n$24 : 00000000\n$25 : 00000000\n$26 : 00000000\n$27 : 00000000\n$28 : 00000000\n$29 : 7FFFEFFC\n$30 : 00000000\n$31 : 004001D4\n",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
